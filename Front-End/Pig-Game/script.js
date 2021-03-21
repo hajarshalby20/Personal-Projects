@@ -70,7 +70,7 @@ holdButton.addEventListener('click', () => {
     document.querySelector(`#score--${activePlayer}`).textContent =
       scores[activePlayer];
 
-    if (scores[activePlayer] >= 10) {
+    if (scores[activePlayer] >= 100) {
       Playing = false;
       diceImage.classList.add('hidden');
       document
