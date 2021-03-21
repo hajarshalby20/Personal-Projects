@@ -13,12 +13,9 @@ const rollingButton = document.querySelector('.btn--roll');
 const holdButton = document.querySelector('.btn--hold');
 
 // First View in the Game
-let currentScore;
-let activePlayer;
-let scores;
-let Playing;
+let currentScore, activePlayer, scores, Playing;
 
-const firsGameView = () => {
+const firstGameView = () => {
   playerOneScore.textContent = 0;
   playerTwOScore.textContent = 0;
   diceImage.classList.add('hidden');
@@ -28,7 +25,7 @@ const firsGameView = () => {
   Playing = true;
 };
 
-firsGameView();
+firstGameView();
 
 const changeDomScore = score => {
   document.querySelector(`#current--${activePlayer}`).textContent = score;
@@ -91,9 +88,8 @@ resetButton.addEventListener('click', () => {
   document
     .querySelector(`.player--${activePlayer}`)
     .classList.remove('player--winner');
+  firstGameView();
   changeDomScore(0);
-  firsGameView();
   playerOneBackground.classList.add('player--active');
   playerTwoBackground.classList.remove('player--active');
-  diceImage.classList.add('hidden');
 });
